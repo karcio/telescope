@@ -1,38 +1,38 @@
-import javax.swing.*; // wczytanie biblioteki graficznej swing
-import java.awt.*; // wczytanie biblioteki graficznej awt
+import javax.swing.*; 
+import java.awt.*; 
 import java.awt.event.*;
 
 
-public class Telescope {
-	public static void main(String[] args){
+public class Telescope 
+{
+	public static void main(String[] args)
+	{
 		SimpleFrame frame = new SimpleFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
-		
 	}
 }
 
-class SimpleFrame extends JFrame{
+class SimpleFrame extends JFrame
+{
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public SimpleFrame(){
+	public SimpleFrame()
+	{
 		setTitle("Telescope simple info");
 		setSize(180, 300);
 		setLocation(200,200);  
-				
 		Panel panel = new Panel();
 		Container area = getContentPane();
 		area.add(panel);
 	}
-	
 }
 
-class Panel extends JPanel{
-	
-	
+class Panel extends JPanel
+{
 	/**
 	 * 
 	 */
@@ -45,7 +45,8 @@ class Panel extends JPanel{
 	//JTextField OgniskowaOkularu;
 	//JTextField UzyskanePowiekszenie;
 	
-	public Panel(){
+	public Panel()
+	{
 		
 	    setLayout(new FlowLayout(FlowLayout.LEFT));
 	    setLayout(new GridLayout(12,1));  
@@ -85,8 +86,10 @@ class Panel extends JPanel{
 	}
 
 
-class Oblicz implements ActionListener{
-	public void actionPerformed(ActionEvent event){
+class Oblicz implements ActionListener
+{
+	public void actionPerformed(ActionEvent event)
+	{
 		
 		long D=Integer.parseInt(SrednicaTeleskopu.getText()); 
 		long d=Integer.parseInt(OgniskowaTeleskopu.getText());
@@ -100,4 +103,5 @@ class Oblicz implements ActionListener{
 		
 	}
 }
+
 }
