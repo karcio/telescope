@@ -1,5 +1,9 @@
 Telescope ver. 0.1 
+<<<<<<< HEAD
 ==================
+=======
+=====================
+>>>>>>> b8876ca9843ed6b29334f4b6d736e18e9f891191
 
 
 An application to calculate the minimum and maximum magnification telescope
