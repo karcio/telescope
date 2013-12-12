@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
@@ -93,21 +94,28 @@ public class MainPanel extends JPanel {
 	class Calculate implements ActionListener {
 		public void actionPerformed(ActionEvent event) {
 
-			long tD = Integer.parseInt(telescopeDiameter.getText());
-			long fL = Integer.parseInt(focalLength.getText());
+			if (telescopeDiameter.getText().equals("")) {
+				JOptionPane.showMessageDialog(null,
+						"No value entered in telescope diameter textbox ");
+			} else if (focalLength.getText().equals("")) {
+				JOptionPane.showMessageDialog(null,
+						"No value entered in focal length textbox");
+			} else {
+				long tD = Integer.parseInt(telescopeDiameter.getText());
+				long fL = Integer.parseInt(focalLength.getText());
 
-			Operation calculator = new Operation();
-			calculator.calculate(fL, tD);
-			calculator.getBrightness();
-			calculator.getMinimalMagnification();
-			calculator.getMaximalMagnification();
+				Operation calculator = new Operation();
+				calculator.calculate(fL, tD);
+				calculator.getBrightness();
+				calculator.getMinimalMagnification();
+				calculator.getMaximalMagnification();
 
-			brightness.setText("" + calculator.getBrightness());
-			minimalMagnification.setText(String.valueOf(calculator
-					.getMinimalMagnification()));
-			maximalMagnification.setText(String.valueOf(calculator
-					.getMaximalMagnification()));
-
+				brightness.setText("" + calculator.getBrightness());
+				minimalMagnification.setText(String.valueOf(calculator
+						.getMinimalMagnification()));
+				maximalMagnification.setText(String.valueOf(calculator
+						.getMaximalMagnification()));
+			}
 		}
 
 	}

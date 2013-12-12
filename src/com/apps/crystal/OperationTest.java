@@ -13,7 +13,6 @@ public class OperationTest {
 		Assert.assertEquals(5, oper.getBrightness());
 		Assert.assertEquals(21, oper.getMinimalMagnification());
 		Assert.assertEquals(260, oper.getMaximalMagnification());
-
 	}
 
 }
